@@ -1,16 +1,269 @@
-<html><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩企工作室 - 官方网站</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* 英雄区域 */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://picsum.photos/1920/1080") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 关于我们 */
+        .about {
+            padding: 5rem 5%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* 作品展示 */
+        .portfolio {
+            padding: 5rem 5%;
+            background-color: #f8f9fa;
+        }
+
+        .portfolio h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-item h3 {
+            padding: 1rem;
+            color: #2c3e50;
+        }
+
+        .portfolio-item p {
+            padding: 0 1rem 1rem;
+            color: #666;
+        }
+
+        /* 联系我们 */
+        .contact {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">彩企工作室</div>
+        <div class="nav-links">
+            <a href=" ">首页</a >
+            <a href="#about">关于我们</a >
+            <a href="#portfolio">作品</a >
+            <a href="#contact">联系</a >
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <h1>欢迎来到彩企工作室</h1>
+        <p>我们专注于制作好的视频</p >
+        <a href="#contact" class="btn">立即联系</a >
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <h2>关于我们</h2>
+        <div class="about-content">
+            <p>彩企工作室是一家充满活力的创意团队，我们致力于制作好的视频
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section class="portfolio" id="portfolio">
+        <h2>精选作品</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                < img src="https://picsum.photos/600/400?random=1" alt="项目1">
+                <h3>此区域正在完善，敬请谅解</h3>
+                <p>此区域正在完善，敬请谅解</p >
+            </div>
+            <div class="portfolio-item">
+                < img src="https://picsum.photos/600/400?random=2" alt="项目2">
+                <h3>此区域正在完善，敬请谅解</h3>
+                <p>此区域正在完善，敬请谅解</p >
+            </div>
+            <div class="portfolio-item">
+                < img src="https://picsum.photos/600/400?random=3" alt="项目3">
+                <h3>此区域正在完善，敬请谅解</h3>
+                <p>此区域正在完善，敬请谅解</p >
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact" id="contact">
+        <h2>联系我们</h2>
+        <div class="contact-info">
+            <p>电话：182-1538-6528</p >
+            <p>邮箱：dzx582@outlook.com</p >
+            <p>期待与您合作，共创精彩！</p >
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 彩企工作室 版权所有</p >
+    </footer>
 </body>
-</html>您好，欢迎来到彩企工作室官方网站
-</html>该网站正在完善
-</html>请耐心等待
-</html>call us :18215386528
-</html>E-mail :dzx5826@outlook.com
-</html></html><img src="bj.jpg">
+</html>
