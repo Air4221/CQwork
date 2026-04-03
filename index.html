@@ -250,7 +250,154 @@
             </div>
         </div>
     </section>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>简易聊天界面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft Yahei", sans-serif;
+    }
 
+    body {
+      background: #f0f2f5;
+      padding: 20px;
+    }
+
+    .chat-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+
+    .chat-header {
+      padding: 16px;
+      background: #1677ff;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .chat-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: 70%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    .message-me {
+      align-self: flex-end;
+      background: #1677ff;
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message-bot {
+      align-self: flex-start;
+      background: #e5e6eb;
+      color: #333;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #eee;
+    }
+
+    #msgInput {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #sendBtn {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background: #1677ff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #sendBtn:hover {
+      background: #0d5bcd;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="chat-header">视频留言区</div>
+    <div class="chat-content" id="chatContent"></div>
+    <div class="chat-input">
+      <input type="text" id="msgInput" placeholder="输入消息，您的每一条意见我们都会看..." />
+      <button id="sendBtn">发送</button>
+    </div>
+  </div>
+
+  <script>
+    const chatContent = document.getElementById('chatContent');
+    const msgInput = document.getElementById('msgInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    // 发送消息
+    function sendMessage() {
+      const text = msgInput.value.trim();
+      if (!text) return;
+
+      // 显示自己的消息
+      addMessage(text, 'me');
+      msgInput.value = '';
+
+      // 模拟AI回复
+      setTimeout(() => {
+        addMessage(`你说：${text}`, 'bot');
+      }, 600);
+    }
+
+    // 添加消息到界面
+    function addMessage(text, type) {
+      const div = document.createElement('div');
+      div.className = `message message-${type}`;
+      div.textContent = text;
+      chatContent.appendChild(div);
+      // 滚动到底部
+      chatContent.scrollTop = chatContent.scrollHeight;
+    }
+
+    // 点击发送
+    sendBtn.addEventListener('click', sendMessage);
+
+    // 回车发送
+    msgInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') sendMessage();
+    });
+  </script>
+</body>
+</html>
     <!-- 联系我们 -->
     <section class="contact" id="contact">
         <h2>联系我们</h2>
